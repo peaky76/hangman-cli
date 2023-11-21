@@ -1,13 +1,11 @@
 [tool.poetry]
-name = "python-template"
+name = "hangman-cli"
 version = "0.1.0"
 description = ""
 authors = ["peaky76 <robertjamespeacock@gmail.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
-packages = [
-    { include = "python_template" }
-] # Rename this when the python_template folder is renamed
+packages = [{ include = "hangman_cli" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
