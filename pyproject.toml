@@ -14,7 +14,7 @@ python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 auto-changelog = "^0.6.0"
-coverage = "^7.5.2"
+coverage = "^7.5.3"
 mypy = "^1.10.0"
 pytest = "^8.2.1"
 pytest-cov = "^5.0.0"
