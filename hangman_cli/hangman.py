@@ -32,8 +32,11 @@ def join_guessed_letters(guessed_letters):
 
 
 def select_word():
-    with Path("words.txt").open() as words:
+    cwd = Path(__file__).parent
+
+    with Path(f"{cwd}/words.txt").open() as words:
         word_list = words.readlines()
+        
     return choice(word_list).strip()
 
 
