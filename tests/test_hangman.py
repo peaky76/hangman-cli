@@ -14,7 +14,7 @@ def test_build_guessed_word():
     target_word = "hangman"
     guessed_letters = ["a", "n", "g"]
     expected_result = "_ a n g _ a n"
-    assert build_guessed_word(target_word, guessed_letters) == expected_result  # noqa: F821def test_get_player_input():
+    assert build_guessed_word(target_word, guessed_letters) == expected_result  # noqa: F821
 
 
 def test_get_player_input_with_valid_input(mocker):
