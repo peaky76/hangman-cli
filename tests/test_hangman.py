@@ -4,6 +4,7 @@ from unittest.mock import mock_open
 from hangman_cli.hangman import (
     _validate_input,
     build_guessed_word,
+    game_over,
     get_player_input,
     join_guessed_letters,
     select_word,
@@ -15,6 +16,27 @@ def test_build_guessed_word():
     guessed_letters = ["a", "n", "g"]
     expected_result = "_ a n g _ a n"
     assert build_guessed_word(target_word, guessed_letters) == expected_result  # noqa: F821
+
+
+def test_game_over_with_max_incorrect_guesses():
+    wrong_guesses = 6
+    target_word = "hangman"
+    guessed_letters = ["a", "n", "g", "h", "m"]
+    assert game_over(wrong_guesses, target_word, guessed_letters) is True
+
+
+def test_game_over_with_complete_word():
+    wrong_guesses = 3
+    target_word = "hangman"
+    guessed_letters = ["a", "n", "g", "h", "m"]
+    assert game_over(wrong_guesses, target_word, guessed_letters) is True
+
+
+def test_game_over_without_complete_word():
+    wrong_guesses = 3
+    target_word = "hangman"
+    guessed_letters = ["a", "n", "g", "h"]
+    assert game_over(wrong_guesses, target_word, guessed_letters) is False
 
 
 def test_get_player_input_with_valid_input(mocker):
