@@ -76,7 +76,7 @@ if __name__ == "__main__":
             f"{join_guessed_letters(guessed_letters)}\n"
         )
 
-        player_guess = get_player_input(guessed_letters)
+        player_guess = get_player_input(guessed_letters).capitalize()
         if player_guess in target_word:
             print("Great guess!")
         else:
